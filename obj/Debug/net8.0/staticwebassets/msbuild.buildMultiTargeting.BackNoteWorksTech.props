@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/BackNoteWorksTech.props" />
+</Project>

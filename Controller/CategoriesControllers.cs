@@ -40,15 +40,17 @@ namespace BackNoteWorksTech
 
         // Funcion crear
         [HttpPost]
-        public async Task <ActionResult<Category>> PostCategory(Category category)
+        public async Task <ActionResult<Category>> PostCategory([Bind("Name")]Category category)
         {
+            category.Status = "Activo";
+            category.UpdateDate = DateTime.Now;
             _context.Categories.Add(category);
             await _context.SaveChangesAsync();
-            return CreatedAtAction("GetCategory", new {id = category.Id}, category);
+            return CreatedAtAction("GetCategories", new {id = category.Id}, category);
         }
 
         // Funcion eliminar
-        [HttpPost("{id}")]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCategory(int id)
         {
             var category = await _context.Categories.FindAsync(id);
