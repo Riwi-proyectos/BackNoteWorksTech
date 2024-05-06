@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Laura\\OneDrive\\Escritorio\\NoteworkTech-front\\BackNoteWorksTech\\BackNoteWorksTech.csproj": {}
+    "/Users/santiago/Desktop/BackNoteWorksTech/BackNoteWorksTech.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Laura\\OneDrive\\Escritorio\\NoteworkTech-front\\BackNoteWorksTech\\BackNoteWorksTech.csproj": {
+    "/Users/santiago/Desktop/BackNoteWorksTech/BackNoteWorksTech.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Laura\\OneDrive\\Escritorio\\NoteworkTech-front\\BackNoteWorksTech\\BackNoteWorksTech.csproj",
+        "projectUniqueName": "/Users/santiago/Desktop/BackNoteWorksTech/BackNoteWorksTech.csproj",
         "projectName": "BackNoteWorksTech",
-        "projectPath": "C:\\Users\\Laura\\OneDrive\\Escritorio\\NoteworkTech-front\\BackNoteWorksTech\\BackNoteWorksTech.csproj",
-        "packagesPath": "C:\\Users\\Laura\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Laura\\OneDrive\\Escritorio\\NoteworkTech-front\\BackNoteWorksTech\\obj\\",
+        "projectPath": "/Users/santiago/Desktop/BackNoteWorksTech/BackNoteWorksTech.csproj",
+        "packagesPath": "/Users/santiago/.nuget/packages/",
+        "outputPath": "/Users/santiago/Desktop/BackNoteWorksTech/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Laura\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/santiago/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -32,11 +32,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -79,7 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
