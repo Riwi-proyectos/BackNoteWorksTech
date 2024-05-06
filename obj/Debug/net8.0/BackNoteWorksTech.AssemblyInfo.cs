@@ -13,10 +13,4 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BackNoteWorksTech")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9c08896ccf814ef5d3c32b6f2c53582c8c27bcbc")]
-[assembly: System.Reflection.AssemblyProductAttribute("BackNoteWorksTech")]
-[assembly: System.Reflection.AssemblyTitleAttribute("BackNoteWorksTech")]
-[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
-
-// Generado por la clase WriteCodeFragment de MSBuild.
 
