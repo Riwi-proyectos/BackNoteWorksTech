@@ -59,11 +59,12 @@ namespace BackNoteWorksTech
             {
                 return NotFound();
             }
+            category.Status = "Inactivo";
 
-            _context.Categories.Remove(category);
+            _context.Categories.Update(category);
             await _context.SaveChangesAsync();
 
-            return NoContent();
+            return CreatedAtAction("GetCategories", new {id = category.Id}, category);
         }
 
         // Funcion actualizar
