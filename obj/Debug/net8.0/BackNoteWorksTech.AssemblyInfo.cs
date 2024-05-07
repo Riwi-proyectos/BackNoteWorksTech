@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BackNoteWorksTech")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+30662c518d5eba7752492daee7489230cb76cd0d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+09fd6f5823f06e4556d46fdfcea7aa1162925199")]
 [assembly: System.Reflection.AssemblyProductAttribute("BackNoteWorksTech")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BackNoteWorksTech")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
