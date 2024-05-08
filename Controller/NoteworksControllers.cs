@@ -97,7 +97,32 @@ namespace BackNoteWorksTech
                 throw;
             }
 
-            return NoContent();
+            return CreatedAtAction("GetNoteWork", new {id = notework.Id}, notework);
+        }
+
+        [HttpPut("changeStatus/{id}")]
+        public async Task<IActionResult> UpdateNotework(int id)
+        {
+            var existingNotework = await _context.NoteWorks.FindAsync(id);
+            if (existingNotework == null)
+            {
+                return NotFound();
+            }
+
+            existingNotework.Status = "Oculto";    
+
+            try
+            {            
+                _context.NoteWorks.Update(existingNotework);
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                throw;
+            }
+
+            return CreatedAtAction("GetNoteWork", new {id = existingNotework.Id}, existingNotework);
         }
     }
+
 }
