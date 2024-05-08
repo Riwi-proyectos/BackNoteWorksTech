@@ -1,3 +1,5 @@
+
+
 using BackNoteWorksTech.Data;
 using BackNoteWorksTech.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -41,15 +43,18 @@ namespace BackNoteWorksTech
         
         // Funcion crear
         [HttpPost]
-        public async Task <ActionResult<NoteWork>> PostNoteWork(NoteWork notework)
+        public async Task <ActionResult<NoteWork>> PostNoteWork([Bind("title,Content")]NoteWork notework)
         {
+            notework.Status = "Activo";
+            notework.UpdateDate = DateTime.Now;
+            notework.CategorieId = 1;
             _context.NoteWorks.Add(notework);
             await _context.SaveChangesAsync();
-            return CreatedAtAction("GetNoteWork", new {id = notework.Id}, notework);
+            return CreatedAtAction("GetNoteWorks", new {id = notework.Id}, notework);
         }
 
         // Funcion eliminar
-        [HttpPost("{id}")]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteNotework(int id)
         {
             var notework = await _context.NoteWorks.FindAsync(id);
@@ -58,11 +63,12 @@ namespace BackNoteWorksTech
             {
                 return NotFound();
             }
+            notework.Status = "Inactivo";
 
-            _context.NoteWorks.Remove(notework);
+            _context.NoteWorks.Update(notework);
             await _context.SaveChangesAsync();
             
-            return NoContent();
+            return CreatedAtAction("GetNoteWorks", new {id = notework.Id}, notework);
         }
 
         // Funcion actualizar
@@ -99,5 +105,32 @@ namespace BackNoteWorksTech
 
             return NoContent();
         }
+    
+
+
+        [HttpPut("changeStatus/{id}")]
+        public async Task<IActionResult> UpdateNotework(int id)
+        {
+            var existingNotework = await _context.NoteWorks.FindAsync(id);
+            if (existingNotework == null)
+            {
+                return NotFound();
+            }
+
+            existingNotework.Status = "Oculto";    
+
+            try
+            {            
+                _context.NoteWorks.Update(existingNotework);
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                throw;
+            }
+
+            return CreatedAtAction("GetNoteWork", new {id = existingNotework.Id}, existingNotework);
+        }
     }
+
 }
