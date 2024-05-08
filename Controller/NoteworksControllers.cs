@@ -1,3 +1,5 @@
+
+
 using BackNoteWorksTech.Data;
 using BackNoteWorksTech.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -101,8 +103,10 @@ namespace BackNoteWorksTech
                 throw;
             }
 
-            return CreatedAtAction("GetNoteWork", new {id = notework.Id}, notework);
+            return NoContent();
         }
+    
+
 
         [HttpPut("changeStatus/{id}")]
         public async Task<IActionResult> UpdateNotework(int id)
