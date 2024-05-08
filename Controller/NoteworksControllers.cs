@@ -41,15 +41,18 @@ namespace BackNoteWorksTech
         
         // Funcion crear
         [HttpPost]
-        public async Task <ActionResult<NoteWork>> PostNoteWork(NoteWork notework)
+        public async Task <ActionResult<NoteWork>> PostNoteWork([Bind("title,Content")]NoteWork notework)
         {
+            notework.Status = "Activo";
+            notework.UpdateDate = DateTime.Now;
+            notework.CategorieId = 1;
             _context.NoteWorks.Add(notework);
             await _context.SaveChangesAsync();
-            return CreatedAtAction("GetNoteWork", new {id = notework.Id}, notework);
+            return CreatedAtAction("GetNoteWorks", new {id = notework.Id}, notework);
         }
 
         // Funcion eliminar
-        [HttpPost("{id}")]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteNotework(int id)
         {
             var notework = await _context.NoteWorks.FindAsync(id);
@@ -58,11 +61,12 @@ namespace BackNoteWorksTech
             {
                 return NotFound();
             }
+            notework.Status = "Inactivo";
 
-            _context.NoteWorks.Remove(notework);
+            _context.NoteWorks.Update(notework);
             await _context.SaveChangesAsync();
             
-            return NoContent();
+            return CreatedAtAction("GetNoteWorks", new {id = notework.Id}, notework);
         }
 
         // Funcion actualizar
