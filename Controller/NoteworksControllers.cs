@@ -75,10 +75,6 @@ namespace BackNoteWorksTech
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateNotework(int id, NoteWork notework)
         {
-            if (id != notework.Id)
-            {
-                return BadRequest();
-            }
 
             var existingNotework = await _context.NoteWorks.FindAsync(id);
 
@@ -94,7 +90,7 @@ namespace BackNoteWorksTech
 
             try
             {
-                // Guarda los cambios en la base de datos
+                _context.NoteWorks.Update(notework);
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
