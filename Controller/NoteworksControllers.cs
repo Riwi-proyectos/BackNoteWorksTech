@@ -99,7 +99,7 @@ namespace BackNoteWorksTech
                 throw;
             }
 
-            return NoContent();
+            return CreatedAtAction("GetNoteWork", new {id = existingNotework.Id}, existingNotework);
         }
     
 
