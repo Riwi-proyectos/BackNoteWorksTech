@@ -1173,11 +1173,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/santiago/Desktop/BackNoteWorksTech/BackNoteWorksTech.csproj",
+      "projectUniqueName": "/Users/santiago/Desktop/Notework-Tech/BackNoteWorksTech/BackNoteWorksTech.csproj",
       "projectName": "BackNoteWorksTech",
-      "projectPath": "/Users/santiago/Desktop/BackNoteWorksTech/BackNoteWorksTech.csproj",
+      "projectPath": "/Users/santiago/Desktop/Notework-Tech/BackNoteWorksTech/BackNoteWorksTech.csproj",
       "packagesPath": "/Users/santiago/.nuget/packages/",
-      "outputPath": "/Users/santiago/Desktop/BackNoteWorksTech/obj/",
+      "outputPath": "/Users/santiago/Desktop/Notework-Tech/BackNoteWorksTech/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/santiago/.nuget/NuGet/NuGet.Config"
